@@ -1,0 +1,194 @@
+body{
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.contenedor-nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 12 vh;
+    background-color: #1b1b1b;
+}
+a {
+    text-decoration: none;
+}
+.nav-logo{
+    width: 3rem;
+    height: 3rem;
+}
+.titulo{
+    color: #fff;
+}
+
+.ver-carrito {
+    display: flex;
+    align-self: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+/*stilos del banner*/
+.banner {
+    background: url(../imagenes/banner/remeras-banner.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.contenedor-banner{
+    text-align: center;
+    padding: 15% 0;
+}
+
+.banner h1{
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 62px;
+    font-weight: bold;
+}
+.banner p {
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px  rgba(0, 0, 0, 0.2);
+}
+
+/*product cards*/
+.shop-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 80px 0px 80px;
+}
+.cards{
+    box-shadow: 0 4px 8 px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.cards > img {
+    margin-top: 1rem;
+    width:  14rem;
+    height: 15rem;
+    border-radius: 5%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.price {
+    color: grey;
+    font-size: 20px;
+}
+
+.cards button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(189, 150, 106);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.cards button:hover {
+    opacity: 0.7;
+}
+
+/*modal*/
+.contenedor-modal {
+    width: 90%;
+    max-height: 88vh;
+    margin: 0 5%;
+    color : white;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: fixed;
+    overflow: auto;
+    z-index: 10;
+    top: 12vh;
+    scrollbar-color: none;
+}
+.contenedor-modal::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #020202;
+    color: whitesmoke;
+    width: 100%;
+}
+.modal-header-title {
+    justify-self: start;
+}
+.modal-header-button {
+    cursor: pointer;
+}
+.modal-header-button img {
+    width: 1.7rem;
+    height: 1.7rem;
+    align-items: center;
+}
+.contenedor-modal > .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.img-modal {
+    height: 12rem;
+    width: 9rem;
+    object-fit: cover;
+}
+
+.total-content {
+    font-size: 1.5rem;
+}
+
+.delete-product {
+    cursor: pointer;
+}
+
+.delete-product img {
+    height: 2rem;
+    width: 2rem;
+    margin: 0.4rem;
+}
+
+
+.cantidades-carrito {
+    background-color: rgb(199, 119, 66);
+    color: #fff;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: none;
+    position: absolute;
+}
+
+.sumar {
+    cursor: pointer;
+}
+.restar {
+    cursor: pointer;
+}
