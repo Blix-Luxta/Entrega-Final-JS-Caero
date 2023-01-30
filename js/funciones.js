@@ -1,18 +1,17 @@
 //======== funcion constructora ==========
-function productoNuevo (id, nombre, precio, img, cantidad){
+function productoNuevo(id, nombre, precio, img, cantidad) {
     this.id = parseInt(id);
     this.nombre = nombre;
     this.precio = parseInt(precio);
     this.img = img;
     this.cantidad = parseInt(cantidad);
 }
-
-function cargarProdructo (arr, product){
+function cargarProdructo(arr, product) {
     arr.push(product);
 }
 
 //======= creacion del modal =========
-const pintarCarrito =()=>{
+const pintarCarrito = () => {
     //======= header =======
     modalContainer.innerHTML = "";
     modalContainer.style.display = "flex";
@@ -28,19 +27,21 @@ const pintarCarrito =()=>{
     const modalbutton = document.createElement("div");
     modalbutton.innerHTML = `<img src="./imagenes/icono/cerrar-rojo.jpg">`
     modalbutton.className = "modal-header-button";
-    
-    modalbutton.addEventListener("click", () =>{
+
+    modalbutton.addEventListener("click", () => {
         modalContainer.style.display = "none"
     })
     modalHeader.append(modalbutton);
 
     //======= body ========
-    carrito.forEach((product)=> {
+    carrito.forEach((product) => {
         let carritoContent = document.createElement("div")
         carritoContent.className = "modal-content";
         carritoContent.innerHTML = `
         <img src="${product.img}" class="img-modal">
-        <h3>${product.nombre}</h3>
+        <div class="product_name">
+            <h3>${product.nombre}</h3>
+        </div>
         <p>${product.precio} $</p>
         <span class="restar"> - </span>
         <p>Cantidad: ${product.cantidad}</p>
@@ -55,11 +56,11 @@ const pintarCarrito =()=>{
         let restar = carritoContent.querySelector(".restar")
 
         restar.addEventListener("click", () => {
-            if(product.cantidad !== 1){
-            product.cantidad--
-            guardadoLocal()
-            pintarCarrito()
-        }
+            if (product.cantidad !== 1) {
+                product.cantidad--
+                guardadoLocal()
+                pintarCarrito()
+            }
         })
 
         sumar.addEventListener("click", () => {
@@ -68,12 +69,12 @@ const pintarCarrito =()=>{
             pintarCarrito()
         })
 
-    //====== boton eliminar =====
-    let eliminar = carritoContent.querySelector(".delete-product")
+        //====== boton eliminar =====
+        let eliminar = carritoContent.querySelector(".delete-product")
 
-    eliminar.addEventListener("click", () => {
-        eliminarProducto(product.id)
-    })
+        eliminar.addEventListener("click", () => {
+            eliminarProducto(product.id)
+        })
     });
 
 
@@ -101,13 +102,20 @@ const eliminarProducto = (id) => {
     pintarCarrito()
 }
 
-const carritoCounter = ()=> {
+const carritoCounter = () => {
     cantidadesCarrito.style.display = "block"
 
     const carritoLength = carrito.length
-    
+
     localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
 
     cantidadesCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"))
 }
 
+//=============  creacion de cards / Fetch  ==============
+
+fetch("./data/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+        crearCards(data)
+    })

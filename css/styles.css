@@ -1,14 +1,15 @@
-body{
+body {
     margin: 0;
     background-color: whitesmoke;
 }
 
-.contenedor-nav{
+.contenedor-nav {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 3;
 }
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -17,14 +18,17 @@ body{
     height: 12 vh;
     background-color: #1b1b1b;
 }
+
 a {
     text-decoration: none;
 }
-.nav-logo{
+
+.nav-logo {
     width: 3rem;
     height: 3rem;
 }
-.titulo{
+
+.titulo {
     color: #fff;
 }
 
@@ -42,23 +46,24 @@ a {
     background-size: cover;
 }
 
-.contenedor-banner{
+.contenedor-banner {
     text-align: center;
     padding: 15% 0;
 }
 
-.banner h1{
+.banner h1 {
     margin: 0;
     color: white;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
     font-size: 62px;
     font-weight: bold;
 }
+
 .banner p {
     font-size: 30px;
     color: white;
     opacity: 0.7;
-    text-shadow: 1px 1px 3px  rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /*product cards*/
@@ -68,20 +73,31 @@ a {
     flex-wrap: wrap;
     margin: 30px 80px 0px 80px;
 }
-.cards{
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 4px 8 px rgba(0, 0, 0, 0.2);
     margin: auto;
     text-align: center;
     font-family: sans-serif;
 }
 
-.cards > img {
+.cards>img {
     margin-top: 1rem;
-    width:  14rem;
+    width: 14rem;
     height: 15rem;
     border-radius: 5%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+}
+
+.product_name {
+    margin: .5rem;
+    max-width: 10rem;
+    height: 4rem;
 }
 
 .price {
@@ -110,19 +126,20 @@ a {
     width: 90%;
     max-height: 88vh;
     margin: 0 5%;
-    color : white;
+    color: white;
     background-color: #121212;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     position: fixed;
     overflow: auto;
     z-index: 10;
     top: 12vh;
     scrollbar-color: none;
 }
-.contenedor-modal::-webkit-scrollbar{
+
+.contenedor-modal::-webkit-scrollbar {
     display: none;
 }
 
@@ -133,18 +150,22 @@ a {
     color: whitesmoke;
     width: 100%;
 }
+
 .modal-header-title {
     justify-self: start;
 }
+
 .modal-header-button {
     cursor: pointer;
 }
+
 .modal-header-button img {
     width: 1.7rem;
     height: 1.7rem;
     align-items: center;
 }
-.contenedor-modal > .modal-content {
+
+.contenedor-modal>.modal-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -189,6 +210,7 @@ a {
 .sumar {
     cursor: pointer;
 }
+
 .restar {
     cursor: pointer;
 }
