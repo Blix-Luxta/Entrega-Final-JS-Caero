@@ -4,6 +4,9 @@ const verCarrito = document.getElementById("verCarrito")
 const modalContainer = document.getElementById("modalContainer");
 const cantidadesCarrito = document.getElementById("cantidadesCarrito")
 
+window.addEventListener("load", () => {
+    document.getElementById("loader").classList.toggle("loader2")
+})
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 //=============  creacion de cards con array  ==============

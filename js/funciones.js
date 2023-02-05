@@ -114,8 +114,10 @@ const carritoCounter = () => {
 
 //=============  creacion de cards / Fetch  ==============
 
-fetch("./data/data.json")
-    .then((response) => response.json())
-    .then((data) => {
-        crearCards(data)
-    })
+const cardsApi = async () => {
+    const response = await fetch("./data/data.json")
+    const data = await response.json()
+    crearCards(data)
+}
+
+cardsApi()
