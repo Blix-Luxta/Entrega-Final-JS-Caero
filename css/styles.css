@@ -96,6 +96,16 @@ body {
     clip-path: circle(0% at 100% 100%);
 }
 
+.alerta {
+    display: flex;
+    flex-direction: row;
+}
+
+.confirmButton {
+    margin: 0;
+    padding: 0;
+}
+
 /* contenido */
 .contenedor-nav {
     position: fixed;

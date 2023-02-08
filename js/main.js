@@ -6,6 +6,11 @@ const cantidadesCarrito = document.getElementById("cantidadesCarrito")
 
 window.addEventListener("load", () => {
     document.getElementById("loader").classList.toggle("loader2")
+
+    setTimeout(() => {
+        termsConfirm()
+    }, 2000);
+
 })
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
