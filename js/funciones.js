@@ -82,11 +82,14 @@ const pintarCarrito = () => {
     const total = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
 
     const totalBuying = document.createElement("div")
-    totalBuying.className = "total-content"
-    totalBuying.innerHTML = `Total a pagar ${total} $`
+    totalBuying.className = "total-content d-flex flex-row"
+    totalBuying.innerHTML = `
+        <p> Total a pagar ${total} $</p>
+        <input type="button" value="Comprar" class="button m-3" id="compra">`
     modalContainer.append(totalBuying);
 
-
+    let compraBoton = document.getElementById("compra")
+    compraBoton.addEventListener("click", alertaCompra)
 }
 
 verCarrito.addEventListener("click", pintarCarrito)

@@ -17,3 +17,11 @@ const termsConfirm = () => {
         }
     })
 }
+
+const alertaCompra = () => {
+    Swal.fire(
+        'Listo!',
+        'has comprado los productos del carrito!',
+        'success'
+    )
+}
